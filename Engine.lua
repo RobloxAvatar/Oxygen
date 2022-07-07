@@ -2,7 +2,7 @@ local Oxygen = {}
 Oxygen.Doors = {}
 
 function Oxygen.MakeNotification(txt, time)
-    local p = loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxAvatar/JailWare/main/Notify.lua"))()
+    local p = loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxAvatar/Oxygen/main/Notify.lua"))()
 	p:MakeNotification({Name = "Oxygen", Content = txt, Time = time})
 end
 
