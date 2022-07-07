@@ -1,3 +1,9 @@
+local Esp = {}
+
+function Esp.DestroyLine()
+    Line:Remove()
+end
+
 local camera = workspace.CurrentCamera
 
 local useTeamCheck = _G.TeamCheck
@@ -154,3 +160,5 @@ game.Players.PlayerAdded:Connect(function(v)
         end
     end)
 end)
+
+return Esp
