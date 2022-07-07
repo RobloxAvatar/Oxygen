@@ -5,6 +5,9 @@ local hideWhenNotLooking = true
 local destroy = _G.Destroy
 
 for _,v in pairs(game.Players:GetPlayers()) do
+    if destroy == true then
+        Line:Remove()
+    end
     if useTeamCheck == false or v.Team ~= game.Players.LocalPlayer.Team then
         if v ~= game.Players.LocalPlayer and v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
             local vector,onscreen = camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
@@ -16,14 +19,10 @@ for _,v in pairs(game.Players:GetPlayers()) do
             Line.Thickness = 2
             Line.Transparency = 1
 
-            function Destroy()
-                Line:Remove()
-            end
-
             function script()
                 game:GetService("RunService").RenderStepped:Connect(function(step)
                     if destroy == true then
-                        Destroy()
+                        Line:Remove()
                     end
                     if useTeamCheck == false or v.Team ~= game.Players.LocalPlayer.Team then
                         if v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
@@ -46,7 +45,7 @@ for _,v in pairs(game.Players:GetPlayers()) do
     v.CharacterAdded:Connect(function()
         if useTeamCheck == false or v.Team ~= game.Players.LocalPlayer.Team then
             if destroy == true then
-                Destroy()
+                Line:Remove()
             end
             repeat wait() until v.Character ~= nil
             repeat wait() until v.Character:FindFirstChild("HumanoidRootPart") ~= nil
@@ -62,7 +61,7 @@ for _,v in pairs(game.Players:GetPlayers()) do
             function script()
                 game:GetService("RunService").RenderStepped:Connect(function(step)
                     if destroy == true then
-                        Destroy()
+                        Line:Remove()
                     end
                     if useTeamCheck == false or v.Team ~= game.Players.LocalPlayer.Team then
                         if v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
@@ -87,7 +86,7 @@ end
 game.Players.PlayerAdded:Connect(function(v)
     if useTeamCheck == false or v.Team ~= game.Players.LocalPlayer.Team then
         if destroy == true then
-            Destroy()
+            Line:Remove()
         end
         if v ~= game.Players.LocalPlayer and v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
             local vector,onscreen = camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
@@ -120,7 +119,7 @@ game.Players.PlayerAdded:Connect(function(v)
     v.CharacterAdded:Connect(function()
         if useTeamCheck == false or v.Team ~= game.Players.LocalPlayer.Team then
             if destroy == true then
-                Destroy()
+                Line:Remove()
             end
             repeat wait() until v.Character ~= nil
             repeat wait() until v.Character:FindFirstChild("HumanoidRootPart") ~= nil
@@ -136,7 +135,7 @@ game.Players.PlayerAdded:Connect(function(v)
             function script()
                 game:GetService("RunService").RenderStepped:Connect(function(step)
                     if destroy == true then
-                        Destroy()
+                        Line:Remove()
                     end
                     if v.Character ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil then
                         local vector,onscreen = camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
