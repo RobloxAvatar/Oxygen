@@ -8,7 +8,6 @@ local camera = workspace.CurrentCamera
 
 local useTeamCheck = _G.TeamCheck
 local hideWhenNotLooking = true
-local destroy = _G.Destroy
 
 for _,v in pairs(game.Players:GetPlayers()) do
     if useTeamCheck == false or v.Team ~= game.Players.LocalPlayer.Team then
